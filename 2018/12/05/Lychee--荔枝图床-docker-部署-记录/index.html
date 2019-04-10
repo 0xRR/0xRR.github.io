@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Nobody&#39;s Blog">
 <meta property="og:description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker  部署以ubuntu16.4为例  安装docker环境 sudo apt-get install docker.io  拉下镜像 sudo docker pull k">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-10T11:51:58.420Z">
+<meta property="og:updated_time" content="2019-04-10T13:35:18.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lychee--荔枝图床-docker-部署-记录">
 <meta name="twitter:description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker  部署以ubuntu16.4为例  安装docker环境 sudo apt-get install docker.io  拉下镜像 sudo docker pull k">
@@ -414,7 +414,6 @@
 <p>重启容器[3]： </p>
 <p>docker start <strong>\<container id\></container></strong></p>
 </blockquote>
-<p>\</p>
 <h4 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F" target="_blank" rel="noopener">运行镜像</a></h4><blockquote>
 <p>sudo docker run -it -d -p 80:80 -v /<strong>your-path</strong>/uploads/:/uploads/<br>-v /<strong>your-path</strong>/data/:/data/ -v /<strong>your-path</strong>/mysql/:/mysql/<br>kdelfour/lychee-docker</p>
 </blockquote>
@@ -426,7 +425,6 @@
 <blockquote>
 <p>sudo docker run -it -d  kdelfour/lychee-docker</p>
 </blockquote>
-<p>\</p>
 <h4 id="设置自启动"><a href="#设置自启动" class="headerlink" title="设置自启动"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F" target="_blank" rel="noopener">设置自启动</a></h4><p>在运行docker容器时可以加如下参数来保证每次docker服务重启后容器也自动重启[4]：</p>
 <blockquote>
 <p>docker run </p>
@@ -436,21 +434,16 @@
 <blockquote>
 <p>docker update --restart=always <strong>\<container id\></container></strong></p>
 </blockquote>
-<p>\</p>
 <h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4" target="_blank" rel="noopener">配置</a></h4><p>运行镜像后，浏览器中输入服务器IP以登录</p>
 <p>首次登录需要初始化数据库，使用如下配置</p>
 <p>user name : <strong>lychee</strong></p>
 <p>user password : <strong>lychee</strong></p>
 <p>然后就是设置管理账号与密码，设置一个足够复杂的密码就可以了</p>
-<p>\</p>
 <hr>
 <h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><h1 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h1><p>设置图片公开，可以得到一个直接可访问的链接</p>
 <p>然而，对此照片取消公开，并不会使此链接失效……</p>
 <p>意味着，只要设为公开，发布了此链接，就永远公开了，想取消公开只能删除图片</p>
-<p>\</p>
 <p>不过，可以使用WinSCP、Xftp、等其他方式，替换掉<br>/your-path/lychee/uploads/big/<br>下面的对应文件，在不更换图片链接的情况下，对外链的图片进行修改</p>
-<p>\</p>
-<p>\</p>
 <hr>
 <h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p>[1] <a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/" target="_blank" rel="noopener">自建图床系统 |<br>呈呈的小站</a></p>
 <p>[2]<a href="https://github.com/kdelfour/lychee-docker/issues/6" target="_blank" rel="noopener">permission denied to /uploads and /data directories · Issue #6 ·<br>kdelfour/lychee-docker</a></p>
