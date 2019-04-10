@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="VPS,折腾,电脑,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker  部署以ubuntu16.4为例  安装docker环境 sudo apt-get install docker.io  拉下镜像 sudo docker pull k">
+<meta name="keywords" content="VPS,折腾,电脑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lychee--荔枝图床-docker-部署-记录">
+<meta property="og:url" content="http://yoursite.com/2018/12/05/Lychee--荔枝图床-docker-部署-记录/index.html">
+<meta property="og:site_name" content="Nobody&#39;s Blog">
+<meta property="og:description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker  部署以ubuntu16.4为例  安装docker环境 sudo apt-get install docker.io  拉下镜像 sudo docker pull k">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-10T11:51:58.420Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Lychee--荔枝图床-docker-部署-记录">
+<meta name="twitter:description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker  部署以ubuntu16.4为例  安装docker环境 sudo apt-get install docker.io  拉下镜像 sudo docker pull k">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/05/Lychee--荔枝图床-docker-部署-记录/">
+
+
+
+
+
+  <title>Lychee--荔枝图床-docker-部署-记录 | Nobody's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nobody's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/Lychee--荔枝图床-docker-部署-记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Lychee--荔枝图床-docker-部署-记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-05T08:42:00+08:00">
+                2018-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3C-数码/" itemprop="url" rel="index">
+                    <span itemprop="name">3C & 数码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/05/Lychee--荔枝图床-docker-部署-记录/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/05/Lychee--荔枝图床-docker-部署-记录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介 "></a><strong>简介</strong> </h1><p>Lychee<br>是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，<strong>此外这套系统也支持<br>Docker</strong> 。</p>
+<p><a href="https://lychee.electerious.com/" target="_blank" rel="noopener">官网地址</a></p>
+<p><a href="https://github.com/electerious/Lychee" target="_blank" rel="noopener">项目 Github 地址</a></p>
+<p><a href="https://ld.electerious.com/#" target="_blank" rel="noopener">Demo 演示</a></p>
+<p><a href="https://hub.docker.com/r/kdelfour/lychee-docker/" target="_blank" rel="noopener">Docker</a></p>
+<hr>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>以ubuntu16.4为例</p>
+<h4 id><a href="#" class="headerlink" title=" "></a> </h4><h4 id="安装docker环境"><a href="#安装docker环境" class="headerlink" title="安装docker环境"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E5%AE%89%E8%A3%85docker%E7%8E%AF%E5%A2%83" target="_blank" rel="noopener">安装docker环境</a></h4><blockquote>
+<p>sudo apt-get install docker.io</p>
+</blockquote>
+<h4 id="拉下镜像"><a href="#拉下镜像" class="headerlink" title="拉下镜像"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E6%8B%89%E4%B8%8B%E9%95%9C%E5%83%8F" target="_blank" rel="noopener">拉下镜像</a></h4><blockquote>
+<p>sudo docker pull kdelfour/supervisor-docker</p>
+</blockquote>
+<h4 id="建立文件夹并设置权限（可跳过）"><a href="#建立文件夹并设置权限（可跳过）" class="headerlink" title="建立文件夹并设置权限（可跳过）"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E6%8B%89%E4%B8%8B%E9%95%9C%E5%83%8F" target="_blank" rel="noopener">建立文件夹并设置权限</a>（可跳过）</h4><blockquote>
+<p>cd /root</p>
+<p>mkdir lychee</p>
+<p>cd lychee</p>
+<p>mkdir data</p>
+<p>mkdir uploads</p>
+<p>mkdir mysql</p>
+<p>mkdir uploads/import</p>
+<p>mkdir uploads/big</p>
+<p>mkdir uploads/thumb</p>
+<p>chmod -R 777 uploads/ data/ mysql/</p>
+</blockquote>
+<p>如果不手动建立，就不要给容器指定外部目录，否则会报错权限不足[1][2]</p>
+<blockquote>
+<p>Unable to save this configuration. Permission denied in \’data/\’.<br>Please set the read, write and execute rights for others in<br>\’data/\’and \’uploads/\’. Take a look at the readme for more<br>information.</p>
+</blockquote>
+<p>如果有其他报错，可以进入lychee后点击左上方小齿轮，点击Diagnostics查看错误</p>
+<p>报错后，修改文件夹权限之后，可使用如下命令重启容器</p>
+<blockquote>
+<p>查看正在运行的容器[3]： </p>
+<p>docker ps</p>
+</blockquote>
+<blockquote>
+<p>查看所有容器[3]： </p>
+<p>docker ps -a</p>
+</blockquote>
+<blockquote>
+<p>重启容器[3]： </p>
+<p>docker start <strong>\<container id\></container></strong></p>
+</blockquote>
+<p>\</p>
+<h4 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F" target="_blank" rel="noopener">运行镜像</a></h4><blockquote>
+<p>sudo docker run -it -d -p 80:80 -v /<strong>your-path</strong>/uploads/:/uploads/<br>-v /<strong>your-path</strong>/data/:/data/ -v /<strong>your-path</strong>/mysql/:/mysql/<br>kdelfour/lychee-docker</p>
+</blockquote>
+<p>替换your-path为刚刚新建目录的地址，例如在/root下的话就是：</p>
+<blockquote>
+<p>sudo docker run -it -d -p 80:80 -v /root/lychee/uploads/:/uploads/ -v<br>/root/lychee/data/:/data/ -v /root/lychee/mysql/:/mysql/<br>kdelfour/lychee-docker</p>
+</blockquote>
+<p>如果跳过了刚刚的建立文件夹及权限设置，数据库及图片将会保存在容器内部，则使用下列命令运行镜像：</p>
+<blockquote>
+<p>sudo docker run -it -d  kdelfour/lychee-docker</p>
+</blockquote>
+<p>\</p>
+<h4 id="设置自启动"><a href="#设置自启动" class="headerlink" title="设置自启动"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F" target="_blank" rel="noopener">设置自启动</a></h4><p>在运行docker容器时可以加如下参数来保证每次docker服务重启后容器也自动重启[4]：</p>
+<blockquote>
+<p>docker run </p>
+<p>--restart=always</p>
+</blockquote>
+<p>如果已经启动了则可以使用如下命令[4]：</p>
+<blockquote>
+<p>docker update --restart=always <strong>\<container id\></container></strong></p>
+</blockquote>
+<p>\</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4" target="_blank" rel="noopener">配置</a></h4><p>运行镜像后，浏览器中输入服务器IP以登录</p>
+<p>首次登录需要初始化数据库，使用如下配置</p>
+<p>user name : <strong>lychee</strong></p>
+<p>user password : <strong>lychee</strong></p>
+<p>然后就是设置管理账号与密码，设置一个足够复杂的密码就可以了</p>
+<p>\</p>
+<hr>
+<h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><h1 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h1><p>设置图片公开，可以得到一个直接可访问的链接</p>
+<p>然而，对此照片取消公开，并不会使此链接失效……</p>
+<p>意味着，只要设为公开，发布了此链接，就永远公开了，想取消公开只能删除图片</p>
+<p>\</p>
+<p>不过，可以使用WinSCP、Xftp、等其他方式，替换掉<br>/your-path/lychee/uploads/big/<br>下面的对应文件，在不更换图片链接的情况下，对外链的图片进行修改</p>
+<p>\</p>
+<p>\</p>
+<hr>
+<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p>[1] <a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/" target="_blank" rel="noopener">自建图床系统 |<br>呈呈的小站</a></p>
+<p>[2]<a href="https://github.com/kdelfour/lychee-docker/issues/6" target="_blank" rel="noopener">permission denied to /uploads and /data directories · Issue #6 ·<br>kdelfour/lychee-docker</a></p>
+<p>[3]<a href="https://segmentfault.com/a/1190000009544565" target="_blank" rel="noopener">Docker入门，看这篇就够了 - 个人文章 - SegmentFault<br>思否</a></p>
+<p>[4]<a href="https://blog.csdn.net/qq_27575627/article/details/73470120" target="_blank" rel="noopener">docker服务重启后自动重启容器</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/VPS/" rel="tag"># VPS</a>
+          
+            <a href="/tags/折腾/" rel="tag"># 折腾</a>
+          
+            <a href="/tags/电脑/" rel="tag"># 电脑</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/20/2016年9月 年保玉则主峰 攀登记录/" rel="next" title="2016年9月 年保玉则主峰 攀登记录">
+                <i class="fa fa-chevron-left"></i> 2016年9月 年保玉则主峰 攀登记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="John Doe">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#部署"><span class="nav-number">2.</span> <span class="nav-text">部署</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">2.0.0.1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装docker环境"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">安装docker环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拉下镜像"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">拉下镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建立文件夹并设置权限（可跳过）"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">建立文件夹并设置权限（可跳过）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行镜像"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">运行镜像</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置自启动"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">设置自启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">2.0.0.7.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-1"><span class="nav-number">2.0.0.8.</span> <span class="nav-text"> </span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#其他事项"><span class="nav-number">3.</span> <span class="nav-text">其他事项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-number">3.0.0.1.</span> <span class="nav-text">参考：</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'IEtAoLhHW7ivW9oL6CdfyXjP-gzGzoHsz',
+        appKey: 'OOLCawixISgChmnCS0LMaI2L',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
