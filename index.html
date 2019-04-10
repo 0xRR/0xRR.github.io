@@ -485,6 +485,905 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/18/雷迪司-LADIS-UPS-断电自动关机设置说明/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/18/雷迪司-LADIS-UPS-断电自动关机设置说明/" itemprop="url">雷迪司-LADIS-UPS-断电自动关机设置说明</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-18T16:18:00+08:00">
+                2018-11-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3C-数码/" itemprop="url" rel="index">
+                    <span itemprop="name">3C & 数码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/18/雷迪司-LADIS-UPS-断电自动关机设置说明/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/18/雷迪司-LADIS-UPS-断电自动关机设置说明/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>中文翻译完全像是嘴里含着 * 在说话一样</p>
+<p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/1.png" alt></p>
+<p>语言切换成英文之后好多了</p>
+<p>不过那几个时间之间的关系还是有一些不明确</p>
+<p>反复试验之后才弄明白是这么回事</p>
+<p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/2.png" alt></p>
+<p>从时间轴上看是这个样子</p>
+<p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/3.png" alt></p>
+<p>第一个设置的时间 shut down the local system after<br>是指从断电开始，到向电脑发送关机指令的时间</p>
+<p>发送了关机指令，电脑不是强制关机，而是正常关机一样有一个关闭各项软件和服务的序列要处理，所有有了<br>time to wait before shutting down the locak sysyem<br>这个设置，这个设置是用来控制从发送关机指令，到关闭UPS电源之间的时间的，如果设得太短了，可能会发送电脑还没关闭完，UPS就关闭了，直接断电（不过上面如果选择关闭电脑之后不关闭UPS，应该就不用管这个了</p>
+<p>还有个脚本执行时间，是用来控制在关机指令发送之前几分钟执行脚本的</p>
+<p>我买的型号是H1500VA，2个12V<br>9AH的电池，实测可以给200W的电脑+显示供电35分钟左右，所以我设置成了20分钟发送关机指令，发送关机指令后15分钟关闭UPS（防止bug10更新时断电，15分钟跑周年更新肯定不够，跑一般的小更新应该没问题）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/Mavic Pro-Air-大疆无人机使用心得体会/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/10/Mavic Pro-Air-大疆无人机使用心得体会/" itemprop="url">Mavic Pro-Air-大疆无人机使用心得体会</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-10T15:12:00+08:00">
+                2018-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3C-数码/" itemprop="url" rel="index">
+                    <span itemprop="name">3C & 数码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/04/10/Mavic Pro-Air-大疆无人机使用心得体会/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/10/Mavic Pro-Air-大疆无人机使用心得体会/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.记得插tf卡，插电脑上考出来之后马上插回去，不然迟早得忘</p>
+<p>2.起飞、降落的时候拿着屁股对着自己，不然的话脑子一抽心一慌打杆反了妥妥的炸</p>
+<p>3.非恶劣天气下，高空飞行建议取下云台保护罩，减轻飞行重量，避免画质损失。关键是从高空炸鸡炸下来那货也保护不到什么。。。。（恶劣天气、低空作死飞行可以带上</p>
+<p>4.时刻关注电量，记不住的话把低电量报警调高点，等开始报警了嫌吵的话再调低点都可以；电量条上的最低返航电量是有一些富裕的，但是为了安全起见，避免遇到意外情况时却没有足够的电量了，最好还是听从其建议。</p>
+<p>5.关注电池电压（可在设置中打开显示到屏幕上），大幅度打杆会导致大电流放电，电压会掉很多，希望电池寿命长点、飞行续航长点的话应该避免，比如S模式全速向前全速爬升一会儿就电池过流警报了，自己看着电压打杆就不会触发放电过流警报</p>
+<p>6.起飞前观察环境，风向，阳光方向，自己所站的朝向</p>
+<p>风向会影响返航时的耗时，如果顺风出去，回来的时候就会耗时更久。强烈的阳光会触发前视觉避障，如果太阳很大，最好是把自动返航避障爬升关了（前提是做好飞行计划，见后一条）。自己所站的朝向、以及飞机所在的位置，要结合实际地形、指南针、地图来综合考虑，根据飞机的位置调整自己（也是遥控器天线）的朝向，以获得最好的信号。</p>
+<p>7.起飞前做好飞行计划，想好自己往哪个方向飞，路径上有哪些阻隔，返航高度应该设为多少。</p>
+<p>起飞之前估计设置一个返航高度，飞出去之后，尽快爬升到所有障碍物之上，然后记下高度，再根据实际需要重新设定返航高度，设高了浪费电划不来，设低了有危险。</p>
+<p>8.天线位置是在前桨臂上，如果希望获得更远的遥控和图传范围，可以选择爬高后倒飞或侧飞，不过需要千万确保没有障碍物</p>
+<p>9.如在计划之外，临时起意想拍摄视频、照片，一定记得确保确定自己的航线上没有障碍物，特别是向下、向后、侧向移动时的拍摄，建议先原地360转一圈看看，再向下45度转一圈看看，再向下90度看一眼。</p>
+<p>如需要下降的时候，可以调转机头朝自己所站的位置看一眼，看下降多少会有阻隔，尽量保持在安全高度之上，虽然失控了会自动爬升，但是会干扰飞行和拍摄。</p>
+<p>10.下降速度只有3米/秒，如果飞高了，返航的时候（在确保安全的前提下），记得全程下降打满，尽量避免已经飞到自己头顶了，却还有400米的高度需要下降。。。</p>
+<p>11.建议自己做一个<br>起飞前检查清单，每次起飞的时候照着清单走一遍，费不了多少时间，但是很有帮助</p>
+<p>12.电池充电时温度会升高，如果升高到一定程度会自动减少电流以避免损伤，所以可以用一个小风扇吹着电池给他充电。</p>
+<p>13.电池的参数写的最大充电功率100W，而官方标配的220V充电器输出功率只有50W，应该是从慢充升温小保护电池的考虑上出发的，可以配合三方大功率充电器和小风扇一起使用</p>
+<p>14.淘宝卖的这种防撞圈不要买，重达117g，而且安装得拆桨叶，超级麻烦，而且保护力度相当有限</p>
+<p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/Mavic%C2%A0Pro-Air-%E5%A4%A7%E7%96%86%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/1.jpg" alt></p>
+<p>15.淘宝卖的这种信号增强装置不要买，没什么暖用，有次用了之后信号还变弱了。。。而且收纳相当不方便，折叠起来比不折叠占的空间还要大。。。。</p>
+<p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/Mavic%C2%A0Pro-Air-%E5%A4%A7%E7%96%86%E6%97%A0%E4%BA%BA%E6%9C%BA%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/2.jpg" alt></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/20/Nintendo-Switch-4G热点联机对战的一种解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/20/Nintendo-Switch-4G热点联机对战的一种解决方案/" itemprop="url">Nintendo-Switch-4G热点联机对战的一种解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-20T00:00:00+08:00">
+                2018-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3C-数码/" itemprop="url" rel="index">
+                    <span itemprop="name">3C & 数码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/20/Nintendo-Switch-4G热点联机对战的一种解决方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/01/20/Nintendo-Switch-4G热点联机对战的一种解决方案/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>部分地区和运营商的手机卡（上网卡）在开手机热点或是插入随身WiFi（mifi、4G移动路由器）的时候，因为拿不到公网IP，NAT层数较多，无法联机（比如喷射战士2.。。。直连电信NAT<br>Type D）</p>
+<p>除了几乎不可能的给运营商打电话投诉这一条途径，还有就是在路由器上挂SS（需要带UDP转发的SS服务器）并启动路由器上的UDP全局转发（游戏模式）这一功能（梅林、Padavan均支持）</p>
+<p>理论上只要肯折腾，openwrt的路由器也支持，可以直接买<a href="https://item.taobao.com/item.htm?spm=a1z0d.6639537.1997196601.15.45bae166KqZb1y&amp;id=525329256815" target="_blank" rel="noopener">这个</a>，不过因为政策原因厂家也不敢把SS功能做得太好（<a href="https://www.gl-inet.com/forums/topic/shadowsocks%E6%94%AF%E6%8C%81/" target="_blank" rel="noopener">https://www.gl-inet.com/forums/topic/shadowsocks支持/</a>），所以需要自己弄</p>
+<p>然而，首先我穷，600太贵了，其次懒得再去学习openwrt了，于是选择了熟悉的Padavan</p>
+<p>首先需要一个<a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.23be58eb67Qf5K&amp;id=37463915458&amp;_u=b2de1qcfd5c" target="_blank" rel="noopener">乐携Nexx<br>WT3020F</a>，淘宝售价88元，mt7620处理器16M/64M，1WAN<br>1LAN 1USB，5V MicroUSB供电，体积比火柴盒稍大</p>
+<p>然后按<a href="http://www.right.com.cn/forum/thread-192545-1-1.html" target="_blank" rel="noopener">此方法</a>刷Padavan，全文摘抄如下：</p>
+<p>【刷入Breed】</p>
+<p>1. 将U盘格式化为FAT32</p>
+<p>2. 将breed.bin 和 WT3020H.trx 拷贝至U盘根目录，并连接至路由器USB接口</p>
+<p>3. 路由器通电，稳定后，通过命令提示符Telnet 192.168.8.1<br>（非摘抄的注释：Win10<br>2017秋季更新之后，开启telnet需要从控制面板的程序和功能进入，从文件浏览器的卸载程序进不去了）</p>
+<pre><code>Login: nexxadmin
+
+Password: y1n2inc.com0755
+</code></pre><p>4. 进入U盘目录 cd<br>/media/sda/sda1（非摘抄的注释：如果多次插拔U盘，会变成sda2 sda3<br>sda4.。。。最好一次搞定或者重启路由器</p>
+<p>5. 可以考虑备份原厂固件，操作命令逻辑大致如下（非必须步骤）</p>
+<p>for i in 0 1 2 3; do cat /dev/mtdblock\$i > mtdblock\$i.bin; done</p>
+<p>6. 刷入Breed</p>
+<p>mtd_write -r -e mtd0 write breed.bin<br>mtd0（非摘抄的注释：一定要找对breed版本，不然会变砖</p>
+<p>稍等几秒，即可完成Breed刷入</p>
+<p>【刷入固件】</p>
+<p>1. 保持U盘连接至路由器USB接口，通过命令提示符Telnet 192.168.8.1</p>
+<pre><code>Login: nexxadmin
+
+Password: y1n2inc.com0755
+</code></pre><p>2. 进入U盘目录</p>
+<p>cd /media/sda/sda1</p>
+<p>3. 刷入固件</p>
+<p>mtd_write -r -e mtd3 write WT3020H.trx mtd3</p>
+<p>大约1分钟左右，固件刷新完成</p>
+<p>路由器重启后，登陆 192.168.123.1 即可登陆新系统后台管理.</p>
+<p>【备注】</p>
+<p>Breed.bin      版本：breed-mt7620-reset1.bin    （Breed r936<br>[2016-08-25]） </p>
+<p>参考：<a href="http://www.right.com.cn/forum/thread-161906-1-1.html" target="_blank" rel="noopener">http://www.right.com.cn/forum/thread-161906-1-1.html</a></p>
+<p>（非摘抄的注释：快速下载链接 <a href="https://breed.hackpascal.net/breed-mt7620-reset1.bin" target="_blank" rel="noopener">https://breed.hackpascal.net/breed-mt7620-reset1.bin</a></p>
+<p>WT3020H.trx    版本：RT-N14U-WT3020H-64M_3.4.3.9-099.trx<br> （Padavan_20160826）</p>
+<p>参考：<a href="http://www.right.com.cn/forum/thread-161324-1-1.html" target="_blank" rel="noopener">http://www.right.com.cn/forum/thread-161324-1-1.html</a></p>
+<p>（非摘抄的注释：快速下载链接 <a href="http://opt.cn2qq.com/padavan/RT-N14U-WT3020H-64M_3.4.3.9-099.trx" target="_blank" rel="noopener">http://opt.cn2qq.com/padavan/RT-N14U-WT3020H-64M_3.4.3.9-099.trx</a></p>
+<p>摘抄完</p>
+<p>刷完之后，你还需要一个USB的4G网卡，淘宝关键字为 4G 卡托<br>，买非WiFI版（电脑版）就行，联通3G<br>4G的便宜，四五十都有，电信4G的贵些100+了</p>
+<p>不过，之前试了下紫米那个4G无线路由器充当USB网卡，结果几分钟断线一次。。。后来换了华为的一个4G无线路由器来充当USB网卡，就正常了可以持续连接不掉线</p>
+<p>最后在咸鱼上170买了个华为E8372h-608水货（带WiFi版），稳定点，不想试运气了。。。</p>
+<p>USB 4G网卡插入后路由器之后，在路由器设置中的 高级设置 USB应用程序<br>选择启动 USB调制解调器</p>
+<p>国家、运营商选你对应的，接入点联通wonet（据说比3gnet快些），移动cmnet，电信ctlte（据说比ctnet快些）</p>
+<p>然后回到 网络地图，查看点击中间那一排图标最底下一个<br>USB调制解调器状态，正常的话就说明网卡连上了，没连上的话去翻日志看看有啥问题虽然看了也不会懂的（我）。。。</p>
+<p>再点击中间那一排图标最上面一个<br>外部网络状态，如果看到获得到了IP，就说明连上4G网络了</p>
+<p>最后配置 扩展功能 5had0w50cks<br>，记得开高级功能里的游戏模式（UDP转发），端口留空全部转发，就可以了</p>
+<p>紫米4G路由器给3020供电，同时充当USB有线网卡，然而会断线。。。</p>
+<p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/Nintendo-Switch-4G%E7%83%AD%E7%82%B9%E8%81%94%E6%9C%BA%E5%AF%B9%E6%88%98%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/1.jpg" alt></p>
+<p>后改为华为的设备就好了，但是需要再加一个移动电源</p>
+<p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/Nintendo-Switch-4G%E7%83%AD%E7%82%B9%E8%81%94%E6%9C%BA%E5%AF%B9%E6%88%98%E7%9A%84%E4%B8%80%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/2.jpg" alt></p>
+<p>PS：路由器和USB网卡之间那根线有点挑线，如果插上路由器找不到网卡的话，可以换个线试试</p>
+<p>PS2：据说可以在手机上开热点，使用带udp转发的ss、ssr，然后用一个叫 VPN<br>tether 的软件进行中继，不过我的手机上没有试验成功</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/28/NW-WS414-413播放列表设置方法-索尼运动防水MP3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/28/NW-WS414-413播放列表设置方法-索尼运动防水MP3/" itemprop="url">NW-WS414-413播放列表设置方法-索尼运动防水MP3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-28T00:00:00+08:00">
+                2017-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3C-数码/" itemprop="url" rel="index">
+                    <span itemprop="name">3C & 数码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/28/NW-WS414-413播放列表设置方法-索尼运动防水MP3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/06/28/NW-WS414-413播放列表设置方法-索尼运动防水MP3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>连接电脑后，在磁盘根目录MUSIC下存放音乐文件</p>
+<p>可嵌套多层文件夹，都可以识别到</p>
+<p>然后在电脑上用任意MP3播放软件，把MUSIC下想列入播放列表的文件拖入播放软件，新建一个播放列表，并保存到MUSIC根目录下，格式为m3u</p>
+<p>打开此m3u文件，检查文件路径是否为相对路径（见附），如果不是相对路径，请更换播放器</p>
+<p>检查编码是否为utf-8，如果文件夹和文件有中文、日文等非英文文件夹，就必须使用utf-8编码，否则不能识别</p>
+<p>PS：理论上NWZ-W273 274、NW-WS613 614 615 623等型号都是通用的</p>
+<p>另：shuffle随机模式不能应用于playlist模式，可以在电脑上对播放列表随机化以取得近似效果</p>
+<p>另2：folder模式的意思是说，沿着一个一个文件夹内的一个一个音频的顺序播放，并不是会限制在该文件夹内</p>
+<p>--------------------------------------------------------------------------------------------------------------</p>
+<p>附 m3u格式说明：</p>
+<p>来源：<a href="https://zh.wikipedia.org/wiki/M3U" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/M3U</a></p>
+<p>M3U文件是一种<a href="https://zh.wikipedia.org/w/index.php?title=%E7%BA%AF%E6%96%87%E6%9C%AC%E6%96%87%E6%A1%A3&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">纯文本文档</a>，可以指定一个或多个多媒体文件的位置，其<a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D" target="_blank" rel="noopener">文件扩展名</a>是”M3U”或者”m3u”。</p>
+<p>M3U文件具有多个条目，每个条目的格式可以是以下几种格式之一：</p>
+<p>一个<em>绝对路径</em>；比如：C:\My Music\Heavysets.mp3</p>
+<p>一个<em>相对路径</em>（相对于M3U文件的路径)；比如：Heavysets.mp3</p>
+<p>一个<a href="https://zh.wikipedia.org/wiki/URL" target="_blank" rel="noopener">URL</a></p>
+<p>举例[<a href="https://zh.wikipedia.org/w/index.php?title=M3U&amp;action=edit&amp;section=4" target="_blank" rel="noopener">编辑</a>]</p>
+<p>例1</p>
+<p>这是Windows平台上的一个扩展M3U文件的举例，Sample.mp3和Example.ogg都是媒体文件。123和321是播放长度，单位是秒(s)，当流媒体文件的长度没有固定、预定的长度值，用-1表示播放长度。播放长度后边是多媒体文件的标题，通常和第二行的文件路径相一致。在<a href="https://zh.wikipedia.org/wiki/Mac_OS_X" target="_blank" rel="noopener">Mac<br>OS<br>X</a>和<a href="https://zh.wikipedia.org/wiki/Linux" target="_blank" rel="noopener">Linux</a>平台，应当使用<a href="https://zh.wikipedia.org/w/index.php?title=Unix%E8%B7%AF%E5%BE%84&amp;action=edit&amp;redlink=1" target="_blank" rel="noopener">Unix路径</a>。</p>
+<blockquote>
+<p>#EXTM3U</p>
+<p>#EXTINF:123, Sample artist - Sample title</p>
+<p>C:\Documents and Settings\I\My Music\Sample.mp3</p>
+<p>#EXTINF:321,Example Artist - Example title</p>
+<p>C:\Documents and Settings\I\My Music\Greatest Hits\Example.ogg</p>
+</blockquote>
+<p>例2</p>
+<p>这个例子说明如何创建一个连接到特定目录（比如<a href="https://zh.wikipedia.org/wiki/%E9%97%AA%E5%AD%98%E7%9B%98" target="_blank" rel="noopener">U盘</a>，或者<a href="https://zh.wikipedia.org/wiki/CD-ROM" target="_blank" rel="noopener">CD-ROM</a>）的M3U文件，这种M3U文件只包含一行字符串：目录的路径。开始播放后，播放器会播放该目录的所有内容：</p>
+<blockquote>
+<p>C:\Music</p>
+</blockquote>
+<p>例3</p>
+<p>这是另外一个使用相对路径的例子，M3U文件和媒体文件应放在同一个目录下，而且当播放列表需要移动到另一台设备时，子目录必须被保留。这种方式更加灵活，不会依赖于文件的具体路径。</p>
+<p>播放的文件跟例1一样，该M3U文件保存为sample.m3u，保存在目录 C:\Documents<br>and Settings\User\My Music\</p>
+<blockquote>
+<p>#EXTM3U</p>
+<p>#EXTINF:123, Sample artist - Sample title</p>
+<p>Sample.mp3</p>
+<p>#EXTINF:321,Example Artist - Example title</p>
+<p>Greatest Hits\Example.ogg</p>
+</blockquote>
+<p>这种格式的M3U允许复制到另一台设备上播放。该目录的所有文件和子目录也必须复制。</p>
+<p>例4</p>
+<p>这是一个混合使用的例子。</p>
+<blockquote>
+<p>Alternative\Band - Song.mp3</p>
+<p>Classical\Other Band - New Song.mp3</p>
+<p>Stuff.mp3</p>
+<p>D:\More Music\Foo.mp3</p>
+<p>..\Other Music\Bar.mp3</p>
+<p><a href="http://emp.cx:8000/Listen.pls" target="_blank" rel="noopener">http://emp.cx:8000/Listen.pls</a></p>
+<p><a href="http://www.example.com/\~user/Mine.mp3" target="_blank" rel="noopener">http://www.example.com/\~user/Mine.mp3</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/18/关于压制后的录像在索尼相册中排序错乱问题的治疗方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/18/关于压制后的录像在索尼相册中排序错乱问题的治疗方案/" itemprop="url">关于压制后的录像在索尼相册中排序错乱问题的治疗方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-18T00:00:00+08:00">
+                2017-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3C-数码/" itemprop="url" rel="index">
+                    <span itemprop="name">3C & 数码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/18/关于压制后的录像在索尼相册中排序错乱问题的治疗方案/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/02/18/关于压制后的录像在索尼相册中排序错乱问题的治疗方案/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>出去玩，拍照，录像，回到家感觉录像占的空间太大（比特率高达18M）于是压一下，码率压到4M，再丢回手机之后，录像就在最前面了（按时间顺序排列的</p>
+<p>特别是，把几个月之前的录像压了再放回去，时间错乱得更多，不能忍</p>
+<p>试着调整创建时间、修改时间来治疗此问题，无效</p>
+<p>最后发现，是mp4的元数据里面的编码时间决定了此视频在相册中的位置</p>
+<p>搜了一下，果然有蛋痛之人遇到过这种问题：<a href="http://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time" target="_blank" rel="noopener">https://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time</a></p>
+<p>解决方法是用FFmpeg来把原始视频文件的元数据完全的复制到压缩后的视频文件中去，真机智！</p>
+<p>命令行是：ffmpeg -i <em>原文件.mp4 </em>-i <em>压缩后的文件.mp4 </em>-map 1<br>-map_metadata 0 -c copy<em>正确时间的文件.mp4</em></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/20/2016年9月 年保玉则主峰 攀登记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1142,7 +2041,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1164,7 +2063,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
