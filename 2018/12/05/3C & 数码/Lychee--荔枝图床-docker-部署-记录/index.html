@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker">
+<meta name="description" content="简介 Lychee 是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持 Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker">
 <meta name="keywords" content="VPS,折腾,电脑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lychee--荔枝图床-docker-部署-记录">
 <meta property="og:url" content="https://0xrr.github.io/2018/12/05/3C & 数码/Lychee--荔枝图床-docker-部署-记录/index.html">
 <meta property="og:site_name" content="Nobody&#39;s Blog">
-<meta property="og:description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker">
+<meta property="og:description" content="简介 Lychee 是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持 Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-04-11T04:04:17.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lychee--荔枝图床-docker-部署-记录">
-<meta name="twitter:description" content="简介 Lychee是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker">
+<meta name="twitter:description" content="简介 Lychee 是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，此外这套系统也支持 Docker 。 官网地址 项目 Github 地址 Demo 演示 Docker">
 
 
 
@@ -414,7 +414,9 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介 "></a><strong>简介</strong> </h1><p>Lychee<br>是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，<strong>此外这套系统也支持<br>Docker</strong> 。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介 "></a><strong>简介</strong> </h1><p>Lychee
+是一款开源的图片管理系统，实际上也可以用作图床，一直在更新，自身功能很强大，还支持二次开发插件及扩展来丰富功能，<strong>此外这套系统也支持
+Docker</strong> 。</p>
 <p><a href="https://lychee.electerious.com/" target="_blank" rel="noopener">官网地址</a></p>
 <p><a href="https://github.com/electerious/Lychee" target="_blank" rel="noopener">项目 Github 地址</a></p>
 <p><a href="https://ld.electerious.com/#" target="_blank" rel="noopener">Demo 演示</a></p>
@@ -442,7 +444,10 @@
 </blockquote>
 <p>如果不手动建立，就不要给容器指定外部目录，否则会报错权限不足[1][2]</p>
 <blockquote>
-<p>Unable to save this configuration. Permission denied in \’data/\’.<br>Please set the read, write and execute rights for others in<br>\’data/\’and \’uploads/\’. Take a look at the readme for more<br>information.</p>
+<p>Unable to save this configuration. Permission denied in \’data/\’.
+Please set the read, write and execute rights for others in
+\’data/\’and \’uploads/\’. Take a look at the readme for more
+information.</p>
 </blockquote>
 <p>如果有其他报错，可以进入lychee后点击左上方小齿轮，点击Diagnostics查看错误</p>
 <p>报错后，修改文件夹权限之后，可使用如下命令重启容器</p>
@@ -459,11 +464,15 @@
 <p>docker start <strong>\<container id\></container></strong></p>
 </blockquote>
 <h4 id="运行镜像"><a href="#运行镜像" class="headerlink" title="运行镜像"></a><a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/#%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F" target="_blank" rel="noopener">运行镜像</a></h4><blockquote>
-<p>sudo docker run -it -d -p 80:80 -v /<strong>your-path</strong>/uploads/:/uploads/<br>-v /<strong>your-path</strong>/data/:/data/ -v /<strong>your-path</strong>/mysql/:/mysql/<br>kdelfour/lychee-docker</p>
+<p>sudo docker run -it -d -p 80:80 -v /<strong>your-path</strong>/uploads/:/uploads/
+-v /<strong>your-path</strong>/data/:/data/ -v /<strong>your-path</strong>/mysql/:/mysql/
+kdelfour/lychee-docker</p>
 </blockquote>
 <p>替换your-path为刚刚新建目录的地址，例如在/root下的话就是：</p>
 <blockquote>
-<p>sudo docker run -it -d -p 80:80 -v /root/lychee/uploads/:/uploads/ -v<br>/root/lychee/data/:/data/ -v /root/lychee/mysql/:/mysql/<br>kdelfour/lychee-docker</p>
+<p>sudo docker run -it -d -p 80:80 -v /root/lychee/uploads/:/uploads/ -v
+/root/lychee/data/:/data/ -v /root/lychee/mysql/:/mysql/
+kdelfour/lychee-docker</p>
 </blockquote>
 <p>如果跳过了刚刚的建立文件夹及权限设置，数据库及图片将会保存在容器内部，则使用下列命令运行镜像：</p>
 <blockquote>
@@ -487,11 +496,16 @@
 <h4 id="-1"><a href="#-1" class="headerlink" title=" "></a> </h4><h1 id="其他事项"><a href="#其他事项" class="headerlink" title="其他事项"></a>其他事项</h1><p>设置图片公开，可以得到一个直接可访问的链接</p>
 <p>然而，对此照片取消公开，并不会使此链接失效……</p>
 <p>意味着，只要设为公开，发布了此链接，就永远公开了，想取消公开只能删除图片</p>
-<p>不过，可以使用WinSCP、Xftp、等其他方式，替换掉<br>/your-path/lychee/uploads/big/<br>下面的对应文件，在不更换图片链接的情况下，对外链的图片进行修改</p>
+<p>不过，可以使用WinSCP、Xftp、等其他方式，替换掉
+/your-path/lychee/uploads/big/
+下面的对应文件，在不更换图片链接的情况下，对外链的图片进行修改</p>
 <hr>
-<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p>[1] <a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/" target="_blank" rel="noopener">自建图床系统 |<br>呈呈的小站</a></p>
-<p>[2]<a href="https://github.com/kdelfour/lychee-docker/issues/6" target="_blank" rel="noopener">permission denied to /uploads and /data directories · Issue #6 ·<br>kdelfour/lychee-docker</a></p>
-<p>[3]<a href="https://segmentfault.com/a/1190000009544565" target="_blank" rel="noopener">Docker入门，看这篇就够了 - 个人文章 - SegmentFault<br>思否</a></p>
+<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p>[1] <a href="https://blog.fengcl.com/2017/06/20/how-to-build-images-bed-system/" target="_blank" rel="noopener">自建图床系统 |
+呈呈的小站</a></p>
+<p>[2]<a href="https://github.com/kdelfour/lychee-docker/issues/6" target="_blank" rel="noopener">permission denied to /uploads and /data directories · Issue #6 ·
+kdelfour/lychee-docker</a></p>
+<p>[3]<a href="https://segmentfault.com/a/1190000009544565" target="_blank" rel="noopener">Docker入门，看这篇就够了 - 个人文章 - SegmentFault
+思否</a></p>
 <p>[4]<a href="https://blog.csdn.net/qq_27575627/article/details/73470120" target="_blank" rel="noopener">docker服务重启后自动重启容器</a></p>
 
       

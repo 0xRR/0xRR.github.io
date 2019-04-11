@@ -427,10 +427,14 @@
 <p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/2.png" alt></p>
 <p>从时间轴上看是这个样子</p>
 <p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/3.png" alt></p>
-<p>第一个设置的时间 shut down the local system after<br>是指从断电开始，到向电脑发送关机指令的时间</p>
-<p>发送了关机指令，电脑不是强制关机，而是正常关机一样有一个关闭各项软件和服务的序列要处理，所有有了<br>time to wait before shutting down the locak sysyem<br>这个设置，这个设置是用来控制从发送关机指令，到关闭UPS电源之间的时间的，如果设得太短了，可能会发送电脑还没关闭完，UPS就关闭了，直接断电（不过上面如果选择关闭电脑之后不关闭UPS，应该就不用管这个了</p>
+<p>第一个设置的时间 shut down the local system after
+是指从断电开始，到向电脑发送关机指令的时间</p>
+<p>发送了关机指令，电脑不是强制关机，而是正常关机一样有一个关闭各项软件和服务的序列要处理，所有有了
+time to wait before shutting down the locak sysyem
+这个设置，这个设置是用来控制从发送关机指令，到关闭UPS电源之间的时间的，如果设得太短了，可能会发送电脑还没关闭完，UPS就关闭了，直接断电（不过上面如果选择关闭电脑之后不关闭UPS，应该就不用管这个了</p>
 <p>还有个脚本执行时间，是用来控制在关机指令发送之前几分钟执行脚本的</p>
-<p>我买的型号是H1500VA，2个12V<br>9AH的电池，实测可以给200W的电脑+显示供电35分钟左右，所以我设置成了20分钟发送关机指令，发送关机指令后15分钟关闭UPS（防止bug10更新时断电，15分钟跑周年更新肯定不够，跑一般的小更新应该没问题）</p>
+<p>我买的型号是H1500VA，2个12V
+9AH的电池，实测可以给200W的电脑+显示供电35分钟左右，所以我设置成了20分钟发送关机指令，发送关机指令后15分钟关闭UPS（防止bug10更新时断电，15分钟跑周年更新肯定不够，跑一般的小更新应该没问题）</p>
 
       
     </div>

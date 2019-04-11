@@ -420,7 +420,8 @@
 <p>最后发现，是mp4的元数据里面的编码时间决定了此视频在相册中的位置</p>
 <p>搜了一下，果然有蛋痛之人遇到过这种问题：<a href="http://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time" target="_blank" rel="noopener">https://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time</a></p>
 <p>解决方法是用FFmpeg来把原始视频文件的元数据完全的复制到压缩后的视频文件中去，真机智！</p>
-<p>命令行是：ffmpeg -i <em>原文件.mp4 </em>-i <em>压缩后的文件.mp4 </em>-map 1<br>-map_metadata 0 -c copy<em>正确时间的文件.mp4</em></p>
+<p>命令行是：ffmpeg -i <em>原文件.mp4 </em>-i <em>压缩后的文件.mp4 </em>-map 1
+-map_metadata 0 -c copy<em>正确时间的文件.mp4</em></p>
 
       
     </div>
