@@ -79,21 +79,21 @@
 
 
 
-<meta name="description" content="中文翻译完全像是嘴里含着 * 在说话一样  语言切换成英文之后好多了 不过那几个时间之间的关系还是有一些不明确 反复试验之后才弄明白是这么回事  从时间轴上看是这个样子  第一个设置的时间 shut down the local system after是指从断电开始，到向电脑发送关机指令的时间 发送了关机指令，电脑不是强制关机，而是正常关机一样有一个关闭各项软件和服务的序列要处理，所有有了tim">
+<meta name="description" content="中文翻译完全像是嘴里含着 * 在说话一样  语言切换成英文之后好多了 不过那几个时间之间的关系还是有一些不明确 反复试验之后才弄明白是这么回事">
 <meta name="keywords" content="折腾,电脑">
 <meta property="og:type" content="article">
 <meta property="og:title" content="雷迪司-LADIS-UPS-断电自动关机设置说明">
 <meta property="og:url" content="https://0xrr.github.io/2018/11/18/3C & 数码/雷迪司-LADIS-UPS-断电自动关机设置说明/index.html">
 <meta property="og:site_name" content="Nobody&#39;s Blog">
-<meta property="og:description" content="中文翻译完全像是嘴里含着 * 在说话一样  语言切换成英文之后好多了 不过那几个时间之间的关系还是有一些不明确 反复试验之后才弄明白是这么回事  从时间轴上看是这个样子  第一个设置的时间 shut down the local system after是指从断电开始，到向电脑发送关机指令的时间 发送了关机指令，电脑不是强制关机，而是正常关机一样有一个关闭各项软件和服务的序列要处理，所有有了tim">
+<meta property="og:description" content="中文翻译完全像是嘴里含着 * 在说话一样  语言切换成英文之后好多了 不过那几个时间之间的关系还是有一些不明确 反复试验之后才弄明白是这么回事">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/3.png">
-<meta property="og:updated_time" content="2019-04-10T12:17:25.869Z">
+<meta property="og:updated_time" content="2019-04-11T04:05:05.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="雷迪司-LADIS-UPS-断电自动关机设置说明">
-<meta name="twitter:description" content="中文翻译完全像是嘴里含着 * 在说话一样  语言切换成英文之后好多了 不过那几个时间之间的关系还是有一些不明确 反复试验之后才弄明白是这么回事  从时间轴上看是这个样子  第一个设置的时间 shut down the local system after是指从断电开始，到向电脑发送关机指令的时间 发送了关机指令，电脑不是强制关机，而是正常关机一样有一个关闭各项软件和服务的序列要处理，所有有了tim">
+<meta name="twitter:description" content="中文翻译完全像是嘴里含着 * 在说话一样  语言切换成英文之后好多了 不过那几个时间之间的关系还是有一些不明确 反复试验之后才弄明白是这么回事">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/1.png">
 
 
@@ -423,6 +423,7 @@
 <p>语言切换成英文之后好多了</p>
 <p>不过那几个时间之间的关系还是有一些不明确</p>
 <p>反复试验之后才弄明白是这么回事</p>
+<a id="more"></a>
 <p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/2.png" alt></p>
 <p>从时间轴上看是这个样子</p>
 <p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/3C%20&amp;%20%E6%95%B0%E7%A0%81/%E9%9B%B7%E8%BF%AA%E5%8F%B8-LADIS-UPS-%E6%96%AD%E7%94%B5%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E8%AE%BE%E7%BD%AE%E8%AF%B4%E6%98%8E/3.png" alt></p>
@@ -547,7 +548,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
