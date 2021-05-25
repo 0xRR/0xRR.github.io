@@ -300,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/10/11/Sport.Outdoor/2016-10-LongYan-Tour-Log/">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2017/02/18/3C_Digi/SONY album/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -319,7 +319,594 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/10/11/Sport.Outdoor/2016-10-LongYan-Tour-Log/" itemprop="url">2016年10月 龙眼 穿越记录</a></h1>
+                <a class="post-title-link" href="/2017/02/18/3C_Digi/SONY album/" itemprop="url">关于压制后的录像在索尼相册中排序错乱问题的治疗方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-18T00:00:00+08:00">
+                2017-02-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/3C-数码/" itemprop="url" rel="index">
+                    <span itemprop="name">3C & 数码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/18/3C_Digi/SONY album/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/02/18/3C_Digi/SONY album/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/02/18/3C_Digi/SONY album/" class="leancloud_visitors" data-flag-title="关于压制后的录像在索尼相册中排序错乱问题的治疗方案">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  239
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>出去玩，拍照，录像，回到家感觉录像占的空间太大（比特率高达18M）于是压一下，码率压到4M，再丢回手机之后，录像就在最前面了（按时间顺序排列的</p>
+<p>特别是，把几个月之前的录像压了再放回去，时间错乱得更多，不能忍</p>
+<p>试着调整创建时间、修改时间来治疗此问题，无效</p>
+<p>最后发现，是mp4的元数据里面的编码时间决定了此视频在相册中的位置</p>
+<p>搜了一下，果然有蛋痛之人遇到过这种问题：<a href="http://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time" target="_blank" rel="noopener">https://superuser.com/questions/523286/how-to-make-handbrake-preserve-capture-time-creation-time</a></p>
+<p>解决方法是用FFmpeg来把原始视频文件的元数据完全的复制到压缩后的视频文件中去，真机智！</p>
+<p>命令行是：ffmpeg -i <em>原文件.mp4 </em>-i <em>压缩后的文件.mp4 </em>-map 1
+-map_metadata 0 -c copy<em>正确时间的文件.mp4</em></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/11/12/Moto_Tour/WJ-DGZ-Review-and-Log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/12/Moto_Tour/WJ-DGZ-Review-and-Log/" itemprop="url">望江大公仔使用感想及记录，22750公里更新</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-12T00:00:00+08:00">
+                2016-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/机车-旅行/" itemprop="url" rel="index">
+                    <span itemprop="name">机车 & 旅行</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/12/Moto_Tour/WJ-DGZ-Review-and-Log/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/11/12/Moto_Tour/WJ-DGZ-Review-and-Log/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/11/12/Moto_Tour/WJ-DGZ-Review-and-Log/" class="leancloud_visitors" data-flag-title="望江大公仔使用感想及记录，22750公里更新">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.3k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>到手两周跑了1300度公里，说几点初步使用感想</p>
+<p>1.低扭很给力，烂路爬坡，转速2000不用半离合，发动机憋不死</p>
+<p>2.相对应的高转无力。。。和华洋160的宗申发动机相比，给油之后，把手传来的感觉，大公仔像是小姑凉在拉你的手，华洋160像是黑叔叔一把把你拽过去。。。。（毕竟华洋是7000多块的车，而且没有任何直流电系统。。。</p>
+<p>3.大灯是渣渣，自己改了LED大灯和LED射灯之后好多了</p>
+<p>4.油耗太良心了，油箱5.1L（最多5.2L，并非使用手册上说的5.5L）能跑210公里（磨合期，保守方式驾驶，如果
+激进驾驶+爬坡多，190公里）</p>
+<p>5.油箱略小。。。而且没有副油箱，跑长途心慌啊。。。</p>
+<p>6.油表是扯的，140公里就开始闪低油量报警，一闪就闪70多公里</p>
+<p>7.大灯总成插头松过一次，我还以为是自己接线没接好呢，结果是插头的母卡太松了，导致公棒插入后卡不紧接触不良。。。。。希望点火器卡子不要也想这样抽风。。。</p>
+<p>8.前后减震都略硬，跑公路是完全没有问题，不过乡村公路就有点吃力了，基坑道和稍微大点的不规则碎石路简直噩梦，完全跑不起速度</p>
+<p>9.速度表快了，实际速度为表显速度*0.91 【后有修订】</p>
+<p>10.目前没出磨合期，发动机震动的话，感觉速度50非常良好，速度60稍微有点大但是还可以接受，但是后视镜都没震得发花，更高的速度就不知道了没有试过</p>
+<p>11.没有脚启动，内心有点不安，如果哪天遇到打不燃，把电瓶电打空了，就只能推车了。。。。</p>
+<p>12.反光镜设置不合理，有一半都是自己的胳膊。。。</p>
+<p>13.空挡前300公里基本上是找不到的，300之后改善很多，1000之后非常容易找了（也有人为因素，熟练了）</p>
+<p>14.没有双闪，转向灯没有提示音，没有防盗接口，没有大架</p>
+<p>15.后刹车刹车的时候会发出尖锐的鸡儿鸡儿声。。。。</p>
+<p>16.车头仪表板的时钟每天会慢一两分钟</p>
+<p>总体相对于价格来说，非常满意，存在的问题都不是大问题而且可以接受，代步、近郊遛弯非常适合</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/12/Moto_Tour/WJ-DGZ-Review-and-Log/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/10/16/Daily_Misc/2016-CQ-Public-Needs-Subject-Training-Exam-Answers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/16/Daily_Misc/2016-CQ-Public-Needs-Subject-Training-Exam-Answers/" itemprop="url">重庆2016年公需科目培训计划 考试 答案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-16T00:00:00+08:00">
+                2016-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/日常-杂文/" itemprop="url" rel="index">
+                    <span itemprop="name">日常 & 杂文</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/10/16/Daily_Misc/2016-CQ-Public-Needs-Subject-Training-Exam-Answers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/10/16/Daily_Misc/2016-CQ-Public-Needs-Subject-Training-Exam-Answers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/10/16/Daily_Misc/2016-CQ-Public-Needs-Subject-Training-Exam-Answers/" class="leancloud_visitors" data-flag-title="重庆2016年公需科目培训计划 考试 答案">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  166
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>重庆市军转（人力资源开发）培训中心学习平台</p>
+<p>2016年公需科目培训计划 2016年公需科目考试 </p>
+<p>刚刚做完，答案基本上在这几个网页里面：</p>
+<p><a href="http://www.a3k8.com/zgks/201605/34056.html" target="_blank" rel="noopener">http://www.a3k8.com/zgks/201605/34056.html</a></p>
+<p><a href="http://www.52qj.com/0/60/9051.html" target="_blank" rel="noopener">http://www.52qj.com/0/60/9051.html</a></p>
+<p><a href="http://www.wenku1.com/news/70739707745EC406.html" target="_blank" rel="noopener">http://www.wenku1.com/news/70739707745EC406.html</a></p>
+<p><a href="http://www.91yixue.com/m/view.php?aid=13590" target="_blank" rel="noopener">http://www.91yixue.com/m/view.php?aid=13590</a></p>
+<p><a href="http://www.91yixue.com/m/view.php?aid=13590&amp;pageno=2" target="_blank" rel="noopener">http://www.91yixue.com/m/view.php?aid=13590&amp;pageno=2</a></p>
+<p><a href="http://www.bipin.org/a/20160807/502477.html" target="_blank" rel="noopener">http://www.bipin.org/a/20160807/502477.html</a></p>
+<p>还有这三个word文档： <a href="https://1drv.ms/f/s!Ap5ixysJw1DOhNE3YbeELH6Adkxmug" target="_blank" rel="noopener">https://1drv.ms/f/s!Ap5ixysJw1DOhNE3YbeELH6Adkxmug</a></p>
+<p>不停的ctrl+F就行了</p>
+<p>对了，原网页是禁止复制的，但是可以用chrome浏览器配合Enable
+Copy扩展解除限制： <a href="https://chrome.google.com/webstore/detail/enable-copy/lmnganadkecefnhncokdlaohlkneihio" target="_blank" rel="noopener">https://chrome.google.com/webstore/detail/enable-copy/lmnganadkecefnhncokdlaohlkneihio</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/10/11/Sport_Outdoor/2016-10-LongYan-Tour-Log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nobody's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/11/Sport_Outdoor/2016-10-LongYan-Tour-Log/" itemprop="url">2016年10月 龙眼 穿越记录</a></h1>
         
 
         <div class="post-meta">
@@ -372,8 +959,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/10/11/Sport.Outdoor/2016-10-LongYan-Tour-Log/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/10/11/Sport.Outdoor/2016-10-LongYan-Tour-Log/" itemprop="commentCount"></span>
+                <a href="/2016/10/11/Sport_Outdoor/2016-10-LongYan-Tour-Log/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/10/11/Sport_Outdoor/2016-10-LongYan-Tour-Log/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +968,7 @@
 
           
           
-             <span id="/2016/10/11/Sport.Outdoor/2016-10-LongYan-Tour-Log/" class="leancloud_visitors" data-flag-title="2016年10月 龙眼 穿越记录">
+             <span id="/2016/10/11/Sport_Outdoor/2016-10-LongYan-Tour-Log/" class="leancloud_visitors" data-flag-title="2016年10月 龙眼 穿越记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -438,7 +1025,7 @@
 <p>3，Suunto手表的按路径导航真好用，基本上没怎么看手机，看手表就行了</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/10/11/Sport.Outdoor/2016-10-LongYan-Tour-Log/#more" rel="contents">
+            <a class="btn" href="/2016/10/11/Sport_Outdoor/2016-10-LongYan-Tour-Log/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -489,7 +1076,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/09/30/Sport.Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/09/30/Sport_Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -508,7 +1095,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/30/Sport.Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/" itemprop="url">龙眼穿越、四姑娘山、日隆、卧龙天气预报链接收集</a></h1>
+                <a class="post-title-link" href="/2016/09/30/Sport_Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/" itemprop="url">龙眼穿越、四姑娘山、日隆、卧龙天气预报链接收集</a></h1>
         
 
         <div class="post-meta">
@@ -561,8 +1148,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/09/30/Sport.Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/09/30/Sport.Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/" itemprop="commentCount"></span>
+                <a href="/2016/09/30/Sport_Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/09/30/Sport_Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -570,7 +1157,7 @@
 
           
           
-             <span id="/2016/09/30/Sport.Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/" class="leancloud_visitors" data-flag-title="龙眼穿越、四姑娘山、日隆、卧龙天气预报链接收集">
+             <span id="/2016/09/30/Sport_Outdoor/Weather-Forecast-Link-Collection-for-LongYan-SiguniangShan/" class="leancloud_visitors" data-flag-title="龙眼穿越、四姑娘山、日隆、卧龙天气预报链接收集">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -696,7 +1283,7 @@ Underground</a></strong></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/09/20/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Log/">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/09/20/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Log/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -715,7 +1302,7 @@ Underground</a></strong></p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/20/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Log/" itemprop="url">2016年9月 年保玉则主峰 攀登记录</a></h1>
+                <a class="post-title-link" href="/2016/09/20/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Log/" itemprop="url">2016年9月 年保玉则主峰 攀登记录</a></h1>
         
 
         <div class="post-meta">
@@ -768,8 +1355,8 @@ Underground</a></strong></p>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/09/20/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Log/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/09/20/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Log/" itemprop="commentCount"></span>
+                <a href="/2016/09/20/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Log/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/09/20/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Log/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -777,7 +1364,7 @@ Underground</a></strong></p>
 
           
           
-             <span id="/2016/09/20/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Log/" class="leancloud_visitors" data-flag-title="2016年9月 年保玉则主峰 攀登记录">
+             <span id="/2016/09/20/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Log/" class="leancloud_visitors" data-flag-title="2016年9月 年保玉则主峰 攀登记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -851,7 +1438,7 @@ Underground</a></strong></p>
 <p><em>注1：季节合适、天气不恶劣、不结组，没有队员特别影响速度的情况下。</em></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/20/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Log/#more" rel="contents">
+            <a class="btn" href="/2016/09/20/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Log/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -902,7 +1489,7 @@ Underground</a></strong></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/09/01/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Plan/">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/09/01/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Plan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -921,7 +1508,7 @@ Underground</a></strong></p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/09/01/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Plan/" itemprop="url">2016年9月 年保玉则主峰 攀登计划</a></h1>
+                <a class="post-title-link" href="/2016/09/01/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Plan/" itemprop="url">2016年9月 年保玉则主峰 攀登计划</a></h1>
         
 
         <div class="post-meta">
@@ -974,8 +1561,8 @@ Underground</a></strong></p>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/09/01/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Plan/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/09/01/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Plan/" itemprop="commentCount"></span>
+                <a href="/2016/09/01/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Plan/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/09/01/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Plan/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -983,7 +1570,7 @@ Underground</a></strong></p>
 
           
           
-             <span id="/2016/09/01/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Plan/" class="leancloud_visitors" data-flag-title="2016年9月 年保玉则主峰 攀登计划">
+             <span id="/2016/09/01/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Plan/" class="leancloud_visitors" data-flag-title="2016年9月 年保玉则主峰 攀登计划">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1034,13 +1621,13 @@ Underground</a></strong></p>
 
       
         
-          <p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/%E8%BF%90%E5%8A%A8%20&amp;%20%E6%88%B7%E5%A4%96/2016%E5%B9%B49%E6%9C%88%20%E5%B9%B4%E4%BF%9D%E7%8E%89%E5%88%99%E4%B8%BB%E5%B3%B0%20%E6%94%80%E7%99%BB%E8%AE%A1%E5%88%92/001.png" alt></p>
+          <p><img src="https://raw.githubusercontent.com/0xrr/Pics/master/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Plan/001.png" alt></p>
 <p>成都-阿坝 黑车130一个人，是早上4点出发 中午12点可到阿坝</p>
 <p>阿坝，三百块单独包车，2小时可到年保玉则景区</p>
 <p>年保玉则景区回阿坝 50一个人，2小时车程（中午12点之后有车，大概下午2-3点</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/09/01/Sport.Outdoor/2016-9-NianBaoYuZe-Climb-Plan/#more" rel="contents">
+            <a class="btn" href="/2016/09/01/Sport_Outdoor/2016-9-NianBaoYuZe-Climb-Plan/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1091,7 +1678,7 @@ Underground</a></strong></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/08/23/Daily.Odd/Fapiao-After-Registration/">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/08/23/Daily_Misc/Fapiao-After-Registration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1110,7 +1697,7 @@ Underground</a></strong></p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/08/23/Daily.Odd/Fapiao-After-Registration/" itemprop="url">车辆上户之后，购置发票更正的流程</a></h1>
+                <a class="post-title-link" href="/2016/08/23/Daily_Misc/Fapiao-After-Registration/" itemprop="url">车辆上户之后，购置发票更正的流程</a></h1>
         
 
         <div class="post-meta">
@@ -1163,8 +1750,8 @@ Underground</a></strong></p>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/08/23/Daily.Odd/Fapiao-After-Registration/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/08/23/Daily.Odd/Fapiao-After-Registration/" itemprop="commentCount"></span>
+                <a href="/2016/08/23/Daily_Misc/Fapiao-After-Registration/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/08/23/Daily_Misc/Fapiao-After-Registration/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1172,7 +1759,7 @@ Underground</a></strong></p>
 
           
           
-             <span id="/2016/08/23/Daily.Odd/Fapiao-After-Registration/" class="leancloud_visitors" data-flag-title="车辆上户之后，购置发票更正的流程">
+             <span id="/2016/08/23/Daily_Misc/Fapiao-After-Registration/" class="leancloud_visitors" data-flag-title="车辆上户之后，购置发票更正的流程">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1235,7 +1822,7 @@ Underground</a></strong></p>
 <p>5销售方存留</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2016/08/23/Daily.Odd/Fapiao-After-Registration/#more" rel="contents">
+            <a class="btn" href="/2016/08/23/Daily_Misc/Fapiao-After-Registration/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1286,7 +1873,7 @@ Underground</a></strong></p>
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/02/08/Sport.Outdoor/Mountain-disease-drugs-and-dietary-precautions/">
+    <link itemprop="mainEntityOfPage" href="https://0xrr.com/2016/02/08/Sport_Outdoor/Mountain-disease-drugs-and-dietary-precautions/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -1305,7 +1892,7 @@ Underground</a></strong></p>
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/02/08/Sport.Outdoor/Mountain-disease-drugs-and-dietary-precautions/" itemprop="url">急性高山病相关药物以及饮食注意事项</a></h1>
+                <a class="post-title-link" href="/2016/02/08/Sport_Outdoor/Mountain-disease-drugs-and-dietary-precautions/" itemprop="url">急性高山病相关药物以及饮食注意事项</a></h1>
         
 
         <div class="post-meta">
@@ -1358,8 +1945,8 @@ Underground</a></strong></p>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/02/08/Sport.Outdoor/Mountain-disease-drugs-and-dietary-precautions/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2016/02/08/Sport.Outdoor/Mountain-disease-drugs-and-dietary-precautions/" itemprop="commentCount"></span>
+                <a href="/2016/02/08/Sport_Outdoor/Mountain-disease-drugs-and-dietary-precautions/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2016/02/08/Sport_Outdoor/Mountain-disease-drugs-and-dietary-precautions/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1367,7 +1954,7 @@ Underground</a></strong></p>
 
           
           
-             <span id="/2016/02/08/Sport.Outdoor/Mountain-disease-drugs-and-dietary-precautions/" class="leancloud_visitors" data-flag-title="急性高山病相关药物以及饮食注意事项">
+             <span id="/2016/02/08/Sport_Outdoor/Mountain-disease-drugs-and-dietary-precautions/" class="leancloud_visitors" data-flag-title="急性高山病相关药物以及饮食注意事项">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1528,7 +2115,7 @@ Connally）著 严冬冬 译</p>
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1550,7 +2137,7 @@ Connally）著 严冬冬 译</p>
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1587,7 +2174,7 @@ Connally）著 严冬冬 译</p>
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1601,7 +2188,7 @@ Connally）著 严冬冬 译</p>
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.2k</span>
+    <span title="Site words total count">64.6k</span>
   
 </div>
 
