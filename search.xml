@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Synology QNAP 网卡踩坑记录]]></title>
     <url>%2F2021%2F05%2F19%2F3C_Digi%2FUSB_network_adapter_for_Synology%26QNAP%2F</url>
-    <content type="text"><![CDATA[先说结论不差钱首选： QNAP：✔ 群晖：✔ ​ 威联通QNAP QNA-UC5G1T USB 3.0 对 5GbE 网络转换器 芯片AQCIIIU ​ https://item.jd.com/100012341770.html 性价比首选： QNAP：😢 群晖：✔ ​ 绿联 CM275 USB转RJ45 2.5Gbps 转换器 芯片RTL8156 ​ https://item.jd.com/10021461960764.html 不推荐购买 QNAP：😢 群晖：😢 ​ 绿联 CM312 USB-C转RJ45 5Gbps 转换器 芯片AQCIIIU ​ https://item.jd.com/68118817284.html ​ 简介及踩坑绿联 CM312 USB-C 5G不推荐购买的原因 1.USB-C还得用一个 USB-C母转USB-A 转接头转接，稳定性欠妥，而且转接之后会对速度有影响，插机箱后面，我分别测试了，USB-C直插和转接速度能差100 2.实测插QNAP（551）上没有驱动，网上有人说453mini插上就能用，怀疑是型号、固件版本区别的原因（另网上有人说得先买个QNA-UC5G1T插一下QNAP，让他自己把驱动装了，然后就能用了 群晖有驱动，不过后面还有坑 3.会断流，这个群晖和QNAP都会出现，不过可以通过更新固件来解决（信息来源 ），但是！！！固件更新只搜到一个 Aquantia AQC111U USB 5Gb LAN Firmware Version 3.1.6.0 下载后发现这个驱动升级程序会检测网卡是否为QNAP AQC111U，无法识别绿联CM312，拒绝升级 所以，不差钱还是去买 QNA-UC5G1T 吧…… 威联通（QNAP）QNA-UC5G1T没啥问题，连接方式也是 USB A-C 线，比较稳 缺点就是贵，还有就是发热量很大，而且过热会降速，当然可以把过热降速关了，那就更热了…… 还有，最快跑400Mb/s，不到5Gbps，所以性价比不高 绿联 CM275 USB-A 2.5G便宜，不到200一个，速度能跑280MB/s，性价比高，发热小，工作稳定不断流，群晖有驱动 ，绿联没驱动]]></content>
+    <content type="text"><![CDATA[先说结论不差钱首选：QNAP：✔ 群晖：✔ ​ 威联通QNAP QNA-UC5G1T USB 3.0 对 5GbE 网络转换器 芯片AQCIIIU ​ https://item.jd.com/100012341770.html ​ 性价比首选：QNAP：😢 群晖：✔ ​ 绿联 CM275 USB转RJ45 2.5Gbps 转换器 芯片RTL8156 ​ https://item.jd.com/10021461960764.html ​ 不推荐购买QNAP：😢 群晖：😢 ​ 绿联 CM312 USB-C转RJ45 5Gbps 转换器 芯片AQCIIIU ​ https://item.jd.com/68118817284.html ​ 简介及踩坑绿联 CM312 USB-C 5G不推荐购买的原因 1.USB-C还得用一个 USB-C母转USB-A 转接头转接，稳定性欠妥，而且转接之后会对速度有影响，插机箱后面，我分别测试了，USB-C直插和转接速度能差100 2.实测插QNAP（551）上没有驱动，网上有人说453mini插上就能用，怀疑是型号、固件版本区别的原因（另网上有人说得先买个QNA-UC5G1T插一下QNAP，让他自己把驱动装了，然后就能用了 群晖有驱动，不过后面还有坑 3.会断流，这个群晖和QNAP都会出现，不过可以通过更新固件来解决（信息来源 ），但是！！！固件更新只搜到一个 Aquantia AQC111U USB 5Gb LAN Firmware Version 3.1.6.0 下载后发现这个驱动升级程序会检测网卡是否为QNAP AQC111U，无法识别绿联CM312，拒绝升级 所以，不差钱还是去买 QNA-UC5G1T 吧…… 威联通（QNAP）QNA-UC5G1T没啥问题，连接方式也是 USB A-C 线，比较稳 缺点就是贵，还有就是发热量很大，而且过热会降速，当然可以把过热降速关了，那就更热了…… 还有，最快跑400Mb/s，不到5Gbps，所以性价比不高 绿联 CM275 USB-A 2.5G便宜，不到200一个，速度能跑280MB/s，性价比高，发热小，工作稳定不断流，群晖有驱动 ，绿联没驱动]]></content>
       <categories>
         <category>3C &amp; 数码</category>
       </categories>
@@ -199,9 +199,9 @@
         <category>3C &amp; 数码</category>
       </categories>
       <tags>
+        <tag>VPS</tag>
         <tag>折腾</tag>
         <tag>电脑</tag>
-        <tag>VPS</tag>
       </tags>
   </entry>
   <entry>
@@ -292,9 +292,9 @@
         <category>3C &amp; 数码</category>
       </categories>
       <tags>
+        <tag>数码产品</tag>
         <tag>无人机</tag>
         <tag>玩具</tag>
-        <tag>数码产品</tag>
         <tag>使用感受</tag>
       </tags>
   </entry>
@@ -307,9 +307,9 @@
       </categories>
       <tags>
         <tag>折腾</tag>
-        <tag>数码产品</tag>
         <tag>Switch</tag>
         <tag>游戏</tag>
+        <tag>数码产品</tag>
       </tags>
   </entry>
   <entry>
